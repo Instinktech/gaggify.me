@@ -1,38 +1,34 @@
-#FuelPHP
+gaggify.me
+========
 
-* Version: 1.5
-* [Website](http://fuelphp.com/)
-* [Release Documentation](http://docs.fuelphp.com)
-* [Release API browser](http://api.fuelphp.com)
-* [Development branch Documentation](http://dev-docs.fuelphp.com)
-* [Development branch API browser](http://dev-api.fuelphp.com)
-* [Support Forum](http://fuelphp.com/forums) for comments, discussion and community support
+Portal to share your gags instantly! Now, get up your own way to share favorite gags, star them and grab ideas to create new!
 
-## Description
+Get cloned
+-------------
 
-FuelPHP is a fast, lightweight PHP 5.3 framework. In an age where frameworks are a dime a dozen, We believe that FuelPHP will stand out in the crowd.  It will do this by combining all the things you love about the great frameworks out there, while getting rid of the bad.
+We love contribution! We write public codes. To get started, simply clone the code like:
 
-## More information
+	$ git clone https://github.com/Instinktech/gaggify.me.git
+	$ cd gaggify.me && ls -l
 
-For more detailed information, see the [development wiki](https://github.com/fuelphp/fuelphp/wiki).
+You'll see that oil file there. This is the CLI script helps to create generators. It works like:
 
-##Development Team
+	$ sudo oil [...]
 
-* Harro Verton - Project Manager, Developer ([http://wanwizard.eu/](http://wanwizard.eu/))
-* Frank de Jonge - Developer ([http://frenky.net/](http://frenky.net/))
+Once cloned, run the following command to let it refine:
 
-### Want to join?
+	$ sudo oil refine install
 
-The FuelPHP development team is always looking for new team members, who are willing
-to help lift the framework to the next level, and have the commitment to not only
-produce awesome code, but also great documentation, and support to our users.
+This will make directories writable that are going to be used by application. Keep in mind about pointing your virtual host to the directory rather then browsing from relative url.
 
-You can not apply for membership. Start by sending in pull-requests, work on outstanding
-feature requests or bugs, and become active in the #fuelphp IRC channel. If your skills
-are up to scratch, we will notice you, and will ask you to become a team member.
 
-### Alumni
+Whoa! It works!
 
-* Jelmer Schreuder - Developer ([http://jelmerschreuder.nl/](http://jelmerschreuder.nl/))
-* Phil Sturgeon - Developer ([http://philsturgeon.co.uk](http://philsturgeon.co.uk))
-* Dan Horrigan - Founder, Developer ([http://dhorrigan.com](http://dhorrigan.com))
+## Contributors
+
+The project is partially contributed by Instinktech developers at a time. This will take a pace later on.
+* [Mail Us](mailto: info@instinktech.com)
+* [Website](http://instinktech.com)
+* [@Instinktech](https://twitter.com/Instinktech)
+
+We'd love to get some tweets from you!.
