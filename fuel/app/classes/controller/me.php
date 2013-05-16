@@ -1,12 +1,12 @@
 <?php
 
-class Controller_Me extends Controller_Template
+class Controller_Me extends \Instinktech\InktController
 {
 
 	public function action_index()
 	{
-		$this->template->title = 'Me &raquo; Index';
-		$this->template->content = View::forge('me/index');
+		$this->setTitle('Dashboard - Profile');
+		$this->setView('me/index');
 	}
 
 	public function action_login()
