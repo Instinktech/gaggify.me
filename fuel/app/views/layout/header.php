@@ -13,8 +13,8 @@
 
                 <div class="nav-collapse collapse">
                     <ul class="nav" id="menu-menu">
-                        <li class="menu-item active" id="menu-item-128"><a href="http://bragthemes.com/demo/pinstrap/blog/">About</a></li>
-                        <li class="menu-item" id="menu-item-131"><a href="http://bragthemes.com/demo/pinstrap/left-sidebar/">Contact</a></li>
+                        <li class="menu-item active" id="menu-item-128"><a href="/about">Le, About</a></li>
+                        <li class="menu-item" id="menu-item-131"><a href="/contact">Le, Contact</a></li>
                     </ul>
                     <a href="#" class="pull-right social-icon"><img src="/assets/img/social/facebook.png" /></a>
                     <a href="#" class="pull-right social-icon"><img src="/assets/img/social/twitter.png" /></a>
