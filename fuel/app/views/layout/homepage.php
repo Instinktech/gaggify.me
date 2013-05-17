@@ -8,17 +8,36 @@
     <?php echo Asset::css('style.css') ?>
     <?php echo Asset::js('jquery-1.9.1.min.js') ?>
     <?php echo Asset::js('bootstrap.min.js') ?>
+    <?php //echo Asset::js('bootstrap-modal.js') ?>
     <?php echo Asset::js('gag.js') ?>
+    <?php //echo Asset::js('jquery.hoverfold.js') ?>
 
 </head>
 <body class="home">
-    <div id="blank-me">
-    </div>
     <?php echo $header ?>
     <div id="container">
 
         <div id="main" role="main">
-			
+				<!--<div id="grid" class="main">
+				<div class="view">
+					<div class="view-back">
+						<span data-icon="A">566</span>
+						<span data-icon="B">124</span>
+						<a href="http://www.flickr.com/photos/ag2r/5439506585/in/photostream">&rarr;</a>
+					</div>
+					<img src="images/1.jpg" /> </div>-->
+				
+                         <!-- Modal -->
+			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="login-form" style="margin:0 auto; width:500px; min-height:170px;">
+				  <h2 style="min-height:60px;">Login</h2>
+				  	  <button class="btn btn-info" type="submit">Login With Facebook</button>
+				  	  <button class="btn btn-info" type="submit">Login With twitter</button>
+				  	  <label></label><label></label>
+					</form>
+				</div>
+			  </div>
+			  
             <ul id="tiles">
 
                 <!-- These is where we place content loaded from the Wookmark API -->
