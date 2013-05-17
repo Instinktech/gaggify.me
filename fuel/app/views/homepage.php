@@ -45,6 +45,7 @@
     <div id="container">
 
         <div id="main" role="main">
+			
             <ul id="tiles">
                 <!-- These is where we place content loaded from the Wookmark API -->
             </ul>
@@ -135,16 +136,19 @@
         var html = '';
         var i=0, length=data.length, image;
         for(; i<length; i++) {
-            image = data[i];
-            html += '<li>';
-
-            // Image tag (preview in Wookmark are 200px wide, so we calculate the height based on that).
-            html += '<img src="'+image.preview+'" width="200" height="'+Math.round(image.height/image.width*200)+'">';
-
-            // Image title.
-            html += '<p>'+image.title+'</p>';
-
-            html += '</li>';
+			image = data[i];
+			$('#tiles').append(
+				$('<li></li>').html(
+					$('<a></a>').attr({
+							'id': 'elem-'+i,
+							 
+						}).html(
+						$('<img />').attr('src',image.preview).width(200).height(Math.round(image.height/image.width*200)).after(
+							$('<p></p>').html(image.title)
+						)
+					)
+				)
+			);
         }
 
         // Add image HTML to the page.
