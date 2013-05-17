@@ -1,5 +1,5 @@
 <?php
-class Controller_Gag extends Controller_Template 
+class Controller_Gag extends \Instinktech\InktController
 {
 
 	public function action_index()

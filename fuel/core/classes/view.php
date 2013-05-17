@@ -382,9 +382,11 @@ class View
 		// set find_file's one-time-only search paths
 		\Finder::instance()->flash($this->request_paths);
 
+
 		// locate the view file
 		if (($path = \Finder::search('views', $file, '.'.$this->extension, false, false)) === false)
 		{
+
 			throw new \FuelException('The requested view could not be found: '.\Fuel::clean_path($file));
 		}
 

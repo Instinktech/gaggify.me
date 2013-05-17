@@ -3,10 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $title; ?></title>
-	<?php echo Asset::css('bootstrap.css'); ?>
-	<style>
-		body { margin: 40px; }
-	</style>
+	<?php echo Asset::css('bootstrap.min.css'); ?>
+    <?php echo Asset::css('bootstrap-responsive.min.css') ?>
+
+    <?php echo Asset::js('jquery-1.9.1.min.js') ?>
+    <?php echo Asset::js('bootstrap.min.js') ?>
 </head>
 <body>
 	<div class="container">

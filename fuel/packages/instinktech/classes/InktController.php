@@ -9,8 +9,24 @@
 namespace Instinktech;
 
 use \Fuel\Core\Controller_Template;
+use Parser\View;
 
 class InktController extends Controller_Template {
+
+    public $template = 'template';
+
+    public function before()
+    {
+        if ( ! empty($this->template) and is_string($this->template))
+        {
+            // Load the template
+            $this->template = \View::forge($this->template);
+        }
+
+
+
+        return parent::before();
+    }
 
     /**
      *  Loads the View.
@@ -18,8 +34,8 @@ class InktController extends Controller_Template {
      * @param $path
      *
      */
-    protected function setView($path) {
-        $this->template->content = \View::forge($path);
+    protected function setView($path, $args = array()) {
+        $this->template->content = \View::forge($path,$args);
     }
 
     /**
@@ -29,6 +45,14 @@ class InktController extends Controller_Template {
      */
     protected function setTitle($title) {
         $this->template->title = $title;
+    }
+
+    protected function dump($collection) {
+        echo "<pre>"; print_r($collection); exit;
+    }
+
+    private function IsMobileUserAgent() {
+        return true;
     }
 
 
