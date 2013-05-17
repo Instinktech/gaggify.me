@@ -22,7 +22,7 @@
 class Controller_Welcome extends \Instinktech\InktController
 {
 
-    public $template = 'homepage';
+    public $template = 'layout/homepage';
 
 	/**
 	 * The basic welcome message

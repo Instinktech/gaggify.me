@@ -21,6 +21,8 @@ class InktController extends Controller_Template {
         {
             // Load the template
             $this->template = \View::forge($this->template);
+            $this->template->header = \View::forge('layout/header');
+            $this->template->footer = \View::forge('layout/footer');
         }
 
 
