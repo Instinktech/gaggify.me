@@ -3,3 +3,4 @@
 .project/
 fuel/app/logs
 fuel/app/cache
+/nbproject/private/

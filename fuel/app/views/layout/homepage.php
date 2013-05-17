@@ -131,11 +131,9 @@
 						}).html(
 						$('<img />').attr('src',image.preview).width(200).height(Math.round(image.height/image.width*200)).after(
 							$('<p></p>').html(image.title)
-                        )
+                                                    ).addClass('cover')
 					)
-                ).append(
-                        $('<div></div>').html("Hamza")
-                    )
+                                 )
 			);
         }
 
