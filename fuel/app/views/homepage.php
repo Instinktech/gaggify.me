@@ -8,13 +8,15 @@
     <?php echo Asset::css('style.css') ?>
     <?php echo Asset::js('jquery-1.9.1.min.js') ?>
     <?php echo Asset::js('bootstrap.min.js') ?>
+    <?php //echo Asset::js('bootstrap-modal.js') ?>
     <?php echo Asset::js('gag.js') ?>
+    <?php //echo Asset::js('jquery.hoverfold.js') ?>
 
 </head>
 <body class="home">
     <div id="header">
         <div class="navbar navbar-fixed-top ">
-            <div class="navbar-inner">
+            <div class="navbar-inner-white">
                 <div class="container">
                     <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
                         <span class="icon-bar"></span>
@@ -29,9 +31,8 @@
                         <ul class="nav" id="menu-menu">
                             <li class="menu-item active" id="menu-item-128"><a href="http://bragthemes.com/demo/pinstrap/blog/">About</a></li>
                             <li class="menu-item" id="menu-item-131"><a href="http://bragthemes.com/demo/pinstrap/left-sidebar/">Contact</a></li>
-                        </ul>
-                        <input type="button" value="Y u no gagger?" class="btn btn-danger pull-right" />
-                        <input type="button" value="Y u no login?" class="btn btn-success pull-right" />
+                        </ul>			
+              			<input type="button" value="Y u no gagger?" class="btn btn-danger pull-right" data-toggle="modal" data-target="#myModal" />
                         <form action="http://bragthemes.com/demo/pinstrap/" id="searchform" method="get" role="search" class="navbar-search pull-right">
                             <input type="text" placeholder="Search" class="search-query" id="s" name="s">
                         </form>
@@ -45,7 +46,26 @@
     <div id="container">
 
         <div id="main" role="main">
-			
+				<!--<div id="grid" class="main">
+				<div class="view">
+					<div class="view-back">
+						<span data-icon="A">566</span>
+						<span data-icon="B">124</span>
+						<a href="http://www.flickr.com/photos/ag2r/5439506585/in/photostream">&rarr;</a>
+					</div>
+					<img src="images/1.jpg" /> </div>-->
+				
+                         <!-- Modal -->
+			<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="login-form" style="margin:0 auto; width:500px; min-height:170px;">
+				  <h2 style="min-height:60px;">Login</h2>
+				  	  <button class="btn btn-info" type="submit">Login With Facebook</button>
+				  	  <button class="btn btn-info" type="submit">Login With twitter</button>
+				  	  <label></label><label></label>
+					</form>
+				</div>
+			  </div>
+			  
             <ul id="tiles">
                 <!-- These is where we place content loaded from the Wookmark API -->
             </ul>
