@@ -16,12 +16,15 @@
                         <li class="menu-item active" id="menu-item-128"><a href="http://bragthemes.com/demo/pinstrap/blog/">About</a></li>
                         <li class="menu-item" id="menu-item-131"><a href="http://bragthemes.com/demo/pinstrap/left-sidebar/">Contact</a></li>
                     </ul>
+                    <a href="#" class="pull-right social-icon"><img src="/assets/img/social/facebook.png" /></a>
+                    <a href="#" class="pull-right social-icon"><img src="/assets/img/social/twitter.png" /></a>
+                    <a href="#" class="pull-right social-icon"><img src="/assets/img/social/gplus.png" /></a>
+                    <a href="#" class="pull-right social-icon"><img src="/assets/img/social/linkedin.png" /></a>
+                    
                     <input type="button" value="Y u no gagger?" class="btn btn-danger pull-right" />
-                    <input type="button" value="Y u no login?" class="btn btn-success pull-right" />
                     <form action="http://bragthemes.com/demo/pinstrap/" id="searchform" method="get" role="search" class="navbar-search pull-right">
                         <input type="text" placeholder="Search" class="search-query" id="s" name="s">
                     </form>
-
                 </div>
 
             </div>

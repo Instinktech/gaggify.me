@@ -120,12 +120,6 @@ progress:after { content: '%'; }
     float: left;
 }
 
-#social-footer {
-    float: left;
-    list-style-type: none;
-}
-#social-footer li {
-    float: left;
-    list-style-type: none;
+.social-icon {
     margin: 5px;
 }

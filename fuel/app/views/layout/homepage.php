@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Gaggify.me - Your Gags Portal!</title>
-    <?php echo Asset::css('bootstrap.min.css'); ?>
+    <?php echo Asset::css('bootstrap.css'); ?>
     <?php echo Asset::css('bootstrap-responsive.min.css') ?>
     <?php echo Asset::css('style.css') ?>
     <?php echo Asset::js('jquery-1.9.1.min.js') ?>
