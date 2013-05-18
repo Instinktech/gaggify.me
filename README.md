@@ -21,6 +21,36 @@ Once cloned, run the following command to let it refine:
 
 This will make directories writable that are going to be used by application. Keep in mind about pointing your virtual host to the directory rather then browsing from relative url.
 
+Lets point a virtual host now. Add host entry:
+
+	$ sudo nano /etc/hosts
+	
+Here, enter your alias like
+
+	127.0.0.1	gaggify.me
+	
+Press Ctrl + O, Y & Return. Now, create a vhost file.
+
+	$ cd /etc/apache2/sites-available/
+	$ cp default gaggify.me
+	$ sudo nano gaggify.me
+	
+Paste the following snippet:
+
+	<VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        ServerName      gaggify.me
+        DocumentRoot /var/www/gaggify.me/public/
+        <Directory /var/www/gaggify.me/public/>
+                Options FollowSymLinks
+                AllowOverride None
+        </Directory>
+	</VirtualHost>
+	
+Cool! We're done with configuration. Run the following command from same directory:
+
+	$ sudo a2ensite gaggify.me
+	$ sudo service apache2 restart
 
 Whoa! It works!
 
