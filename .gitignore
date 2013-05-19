@@ -1,6 +1,6 @@
 .DS_STORE
 .idea/
 .project/
-fuel/app/logs
-fuel/app/cache
-/nbproject/private/
+fuel/app/logs/
+fuel/app/cache/
+nbproject/
