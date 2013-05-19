@@ -1,5 +1,8 @@
 <?php
 
+use \Fuel\Core\Arr;
+use \Fuel\Core\Response;
+
 class Controller_Me extends \Instinktech\InktController
 {
 
@@ -12,9 +15,21 @@ class Controller_Me extends \Instinktech\InktController
 	public function action_login()
 	{
             $facebook = \Social\Facebook::instance();
-            $this->dump($facebook);
-		$this->template->title = 'Me &raquo; Login';
-		$this->template->content = View::forge('me/login');
+            $twitter = \Social\Twitter::instance();
+            $get = $_GET;
+            if ( Arr::get($get, 'via',false) == 'facebook') {
+                if ( !$facebook->check_login()) {
+                    Response::redirect($facebook->getLoginUrl());
+                }
+                
+                // /me has all data. Persist it and start session!
+                $this->dump($facebook->api('/me'));
+            } else if ( Arr::get($get, 'via',false) == 'twitter') {
+                //$twitter->setCallback('gaggify.me/index.php/me/login?via=twitter');
+                
+                
+                
+            }
 	}
 
 	public function action_join()
