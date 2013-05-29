@@ -123,3 +123,15 @@ progress:after { content: '%'; }
 .social-icon {
     margin: 5px;
 }
+
+.fb-modal {
+    background-image: url("../img/bg.png");
+    width: 400px;
+    height: 300px;
+}
+
+.centralize {
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: middle;
+}

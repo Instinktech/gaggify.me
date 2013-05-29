@@ -15,20 +15,13 @@ class Controller_Me extends \Instinktech\InktController
 	public function action_login()
 	{
             $facebook = \Social\Facebook::instance();
-            $twitter = \Social\Twitter::instance();
             $get = $_GET;
             if ( Arr::get($get, 'via',false) == 'facebook') {
                 if ( !$facebook->check_login()) {
                     Response::redirect($facebook->getLoginUrl());
                 }
-                
                 // /me has all data. Persist it and start session!
                 $this->dump($facebook->api('/me'));
-            } else if ( Arr::get($get, 'via',false) == 'twitter') {
-                //$twitter->setCallback('gaggify.me/index.php/me/login?via=twitter');
-                
-                
-                
             }
 	}
 
