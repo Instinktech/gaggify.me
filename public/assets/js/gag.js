@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
    var $ = jQuery;
-
+    $('.gag-item').popover();
 
     $(window).scroll(function () {
         // ROYBIV Logo reaches navbar

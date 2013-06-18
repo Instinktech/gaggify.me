@@ -11,9 +11,9 @@ return array(
         'connection'     => array(
             'hostname'       => 'localhost',
             'port'           => '3306',
-            'database'       => 'gaggify.me_v1',
+            'database'       => 'gaggify.me',
             'username'       => 'root',
-            'password'       => 'root',
+            'password'       => 'sohail2155',
             'persistent'     => false,
             'compress'       => false,
         ),

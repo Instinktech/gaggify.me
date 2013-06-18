@@ -6,9 +6,9 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=gaggify.me_v1',
+			'dsn'        => 'mysql:host=localhost;dbname=gaggify.me',
 			'username'   => 'root',
-			'password'   => 'root',
+			'password'   => 'sohail2155',
 		),
 	),
 );

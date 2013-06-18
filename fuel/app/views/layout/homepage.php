@@ -10,13 +10,11 @@
     <?php echo Asset::js('bootstrap.min.js') ?>
     <?php //echo Asset::js('bootstrap-modal.js') ?>
     <?php echo Asset::js('gag.js') ?>
-    <?php //echo Asset::js('jquery.hoverfold.js') ?>
 
 </head>
 <body class="home">
     <?php echo $header ?>
     <div id="container">
-
         <div id="main" role="main">
 				<!--<div id="grid" class="main">
 				<div class="view">
@@ -132,14 +130,21 @@
 						$('<img />').attr('src',image.preview).width(200).height(Math.round(image.height/image.width*200)).after(
 							$('<p></p>').html(image.title)
                                                     ).addClass('cover')
-					)
+					).addClass('gag-item').attr({
+                                                'data-content': "And here's some amazing content. It's very engaging. right?",
+                                                'title': 'Zardari Rocks!',
+                                                'data-toggle': 'popover',
+                                                'href': '#',
+                                                'data-original': "A Title",
+                                                'rel': "poppver"
+                                        })
                                  )
 			);
         }
 
         // Add image HTML to the page.
         $('#tiles').append(html);
-
+$('.gag-item').popover();
         // Apply layout.
         applyLayout();
     };
