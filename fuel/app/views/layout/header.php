@@ -33,7 +33,7 @@
 <div id="myModal" class="modal hide fade fb-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-body">
         <div class="centralize">
-            <a href="#"><img src="/assets/img/gagger.png" /></a>
+            <a href="/me/login?via=facebook"><img src="/assets/img/gagger.png" /></a>
         </div>
     </div>
 </div>
