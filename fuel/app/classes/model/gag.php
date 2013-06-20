@@ -24,8 +24,8 @@ class Model_Gag extends \Orm\Model
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
-		$val->add_field('name', 'Name', 'required|max_length[255]');
-
+		$val->add_field('title', 'Title', 'required|max_length[255]');
+        $val->add_field('img','Image','required');
 		return $val;
 	}
 

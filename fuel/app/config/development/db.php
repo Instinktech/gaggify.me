@@ -4,11 +4,11 @@
  */
 
 return array(
-	'default' => array(
-		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=gaggify.me',
-			'username'   => 'root',
-			'password'   => 'sohail2155',
-		),
-	),
+    'default' => array(
+        'connection'  => array(
+            'dsn'        => 'mysql:host=localhost;dbname=gaggify.me_v1',
+            'username'   => 'root',
+            'password'   => 'root',
+        ),
+    ),
 );

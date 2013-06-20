@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Gaggify.me - Your Gags Portal!</title>
+    <link href='http://fonts.googleapis.com/css?family=Stalinist+One|Vampiro+One' rel='stylesheet' type='text/css'>
     <?php echo Asset::css('bootstrap.css'); ?>
     <?php echo Asset::css('bootstrap-responsive.min.css') ?>
     <?php echo Asset::css('style.css') ?>
@@ -58,7 +59,7 @@
     var handler = null;
     var page = 1;
     var isLoading = false;
-    var apiURL = 'http://www.wookmark.com/api/json/popular'
+    var apiURL = 'http://gaggify.me/gag/all'
 
     // Prepare layout options.
     var options = {
@@ -100,7 +101,7 @@
 
         $.ajax({
             url: apiURL,
-            dataType: 'jsonp',
+            //dataType: 'jsonp',
             data: {page: page}, // Page parameter to make sure we load new data
             success: onLoadData
         });
@@ -125,9 +126,8 @@
 				$('<li></li>').html(
 					$('<a></a>').attr({
 							'id': 'elem-'+i
-							 
 						}).html(
-						$('<img />').attr('src',image.preview).width(200).height(Math.round(image.height/image.width*200)).after(
+						$('<img />').attr('src','i.php?s=o&img='.image.img_original).width(200).height(Math.round(image.height/image.width*200)).after(
 							$('<p></p>').html(image.title)
                                                     ).addClass('cover')
 					).addClass('gag-item').attr({
@@ -136,7 +136,9 @@
                                                 'data-toggle': 'popover',
                                                 'href': '#',
                                                 'data-original': "A Title",
-                                                'rel': "poppver"
+                                                'rel': "poppver",
+                                                'data-placement': "right"
+
                                         })
                                  )
 			);
@@ -144,7 +146,7 @@
 
         // Add image HTML to the page.
         $('#tiles').append(html);
-$('.gag-item').popover();
+        $('.gag-item').popover();
         // Apply layout.
         applyLayout();
     };

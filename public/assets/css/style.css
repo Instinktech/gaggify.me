@@ -135,3 +135,17 @@ progress:after { content: '%'; }
     text-align: center;
     vertical-align: middle;
 }
+
+.x-welcome {
+    font-family: 'Vampiro One', cursive;
+
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    vertical-align: baseline;
+}
+
+#x-logo {
+    font-family: 'Stalinist One', cursive;
+
+}

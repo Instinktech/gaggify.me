@@ -1,11 +1,11 @@
 <?php echo Form::open(); ?>
     <fieldset class="pull-right">
         <legend>Make a Gag!</legend>
-        <input type="text" placeholder="Caption this gag.." class="input-xxlarge" />
+        <input type="text" name="title" placeholder="Caption this gag.." class="input-xxlarge" />
         <article>
             <div id="holder">
             </div>
-            <p id="upload" class="hidden"><label>Drag & drop not supported, but you can still upload via this input field:<br><input type="file"></label></p>
+            <p id="upload" class="hidden"><label>Drag & drop not supported, but you can still upload via this input field:<br><input name="img" type="file"></label></p>
             <p id="filereader">File API & FileReader API not supported</p>
             <p id="formdata">XHR2's FormData is not supported</p>
             <p id="progress">XHR2's upload progress isn't supported</p>
@@ -56,6 +56,8 @@
                 image.src = event.target.result;
                 //image.width = 500; // a fake resize
                 holder.appendChild(image);
+                $("#holder").append('<input type="hidden" name="img" value="'+event.target.result+'" />');
+                //holder.appendChild('<input type="hidden" name="img" value="'+event.target.result+'" />');
             };
 
             reader.readAsDataURL(file);
@@ -66,7 +68,7 @@
     }
 
     function readfiles(files) {
-        debugger;
+        //debugger;
         var formData = tests.formdata ? new FormData() : null;
         for (var i = 0; i < files.length; i++) {
             if (tests.formdata) formData.append('file', files[i]);
@@ -76,7 +78,7 @@
         // now post a new XHR request
         if (tests.formdata) {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', '/devnull.php');
+            xhr.open('POST', '/gag/temp');
             xhr.onload = function() {
                 progress.value = progress.innerHTML = 100;
             };

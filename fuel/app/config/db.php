@@ -4,7 +4,12 @@
  *
  * See the individual environment DB configs for specific config information.
  */
-
+if ( $_SERVER['LOGILIM_ENV'] == 'development') {
+    return require ('development/db.php');
+} else {
+    require ('production/db.php');
+}/*
+ *
 return array(
     'development' => array(
         'type'           => 'mysqli',
@@ -42,3 +47,5 @@ return array(
         'profiling'      => false,
     ),
 );
+
+ */

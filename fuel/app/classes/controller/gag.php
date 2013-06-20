@@ -1,6 +1,18 @@
 <?php
+
+use \Fuel\Core\Session as Session;
+use \Fuel\Core\Input as Input;
+
 class Controller_Gag extends \Instinktech\InktController
 {
+
+    private $_fileExtension = '.jpeg';
+
+    private $_session = null;
+
+    public function __construct() {
+        $this->_session = Session::instance();
+    }
 
 	public function action_index()
 	{
@@ -9,6 +21,13 @@ class Controller_Gag extends \Instinktech\InktController
 		$this->template->content = View::forge('gag/index', $data);
 
 	}
+
+    public function action_all() {
+        // Apply Filters too.
+        $gags = \Format::forge(Model_Gag::find('all'))->to_array();
+        header("Content-Type: application/json");
+        echo json_encode($gags); exit;
+    }
 
 	public function action_view($id = null)
 	{
@@ -30,23 +49,33 @@ class Controller_Gag extends \Instinktech\InktController
 		if (Input::method() == 'POST')
 		{
 			$val = Model_Gag::validate('create');
-			
 			if ($val->run())
 			{
+                $md5 = md5_file(Input::post('img'));
+                $b64 = Input::post('img');
+                //$b64 = preg_replace('#^data:image/[^;]+;base64,#', '', Input::post('img'));
+                $dir = substr($md5,-2);
+                $fileName = $md5.$this->_fileExtension;
+                $path = BUCKET_PATH.DS.'original'.DS.$dir.DS.$fileName;
+                file_put_contents($path,$b64);
+                $me = $this->_session->get('me', array());
 				$gag = Model_Gag::forge(array(
-					'name' => Input::post('name'),
+					'title' => Input::post('title'),
+                    'img_original'  => $fileName,
+                    'mime'  => 'image/jpeg', //For now
+                    'likes' => 0,
+                    'dislikes'  => 0,
+                    'user_id'   => $me['id'],
+                    'uploaded_on'   => time(),
+                    'host_ip'   => $_SERVER['REMOTE_ADDR']
 				));
 
 				if ($gag and $gag->save())
 				{
-					Session::set_flash('success', 'Added gag #'.$gag->id.'.');
-
-					Response::redirect('gag');
-				}
-
-				else
-				{
-					Session::set_flash('error', 'Could not save gag.');
+					Session::set_flash('success', 'Your Gag has been uploaded successfully!');
+					Response::redirect('gag/view/'.$gag->id);
+				} else {
+					Session::set_flash('error', 'Could not save your gag right now!.');
 				}
 			}
 			else
@@ -57,8 +86,11 @@ class Controller_Gag extends \Instinktech\InktController
 
 		$this->template->title = "Gags";
 		$this->template->content = View::forge('gag/create');
-
 	}
+
+    private function _makeFileFromBase64($stream) {
+        //return file_put_contents('')
+    }
 
 	public function action_edit($id = null)
 	{
